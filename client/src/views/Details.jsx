@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react'
-import {Link, useParams} from 'react-router-dom'
+import {Link, useNavigate, useParams} from 'react-router-dom'
 import axios from 'axios'
 import Chart from '../components/Chart'
 
@@ -8,7 +8,7 @@ const Details = () => {
   const [stock, setStock] = useState([])
   const [loaded, setLoaded] = useState(false)
   const [desc, setDesc]= useState('')
-//HELLO WORLD!!!
+
   useEffect(() => {
       axios.get(`https://api.coingecko.com/api/v3/coins/${id}`)
       .then(res => {
@@ -21,12 +21,30 @@ const Details = () => {
       .catch(err => console.log(err))
   },[loaded])
 
+    const navigate = useNavigate()
+    
+    // TODO: need to have user id to send in axios.get request
+    const addFavorite = () => {
+      axios.post(`http://localhost:8000/api/favorite/${id}`, {
+      name: stock.name,
+      price: stock.market_data.current_price.usd,
+      change: stock.market_data.price_change_24h
+      })
+        .then(res => {
+          console.log('this here')
+          navigate(`/favorites`)
+        })
+        .catch(err => {
+          console.log(err)
+        })}
+
   return (
     (loaded?
     <div className='backgroundStyle'>
-      <button className='btn btn-outline-success mt-3'>Add to Favorites!</button>
       <div className='h1' style={{color: 'white' , padding: '15px'}}>{stock.name}</div>
       <div className='h5' style={{color: 'white'}}>Current Market Price: ${stock.market_data.current_price.usd} </div>
+      <br/>
+      <Link to = '/favorites'><button onClick={{addFavorite}} className='btn btn-outline-success'>Add to Favorites!</button></Link>
       <div className='description' style={{color: 'white'}}>{desc}... </div>
       <Chart id = {id} name={stock.name}/>
     </div>

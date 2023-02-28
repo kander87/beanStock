@@ -7,4 +7,6 @@ module.exports = (app) => {
     app.post('/api/register', UserController.create)//create route
     app.put('/api/user/edit/:id', UserController.updateOne)//update one route
     app.delete('/api/user/:id', UserController.deleteOne)//delete one route
+    app.get('/api/favorites/:id', UserController.getAllFavorites)//get all favorites
+    app.post('/api/favorites/:id', UserController.addFavorite)//add favorite
 }

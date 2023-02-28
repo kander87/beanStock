@@ -6,7 +6,7 @@ const Details = () => {
   const [stock, setStock] = useState([])
   const [loaded, setLoaded] = useState(false)
   const [desc, setDesc]= useState('')
-
+//HELLO WORLD!!!
   useEffect(() => {
       axios.get(`https://api.coingecko.com/api/v3/coins/${id}`)
       .then(res => {

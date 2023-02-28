@@ -48,18 +48,16 @@ const Search = () => {
     //         .then(response => response.json())
     //         .then(coderData => console.log(coderData))
     //         .catch(err => console.log(err))
-    // }
 
 
     return (
-        <div className="searchPage">
+        <div className="searchPage backgroundStyle">
             <SideNav/>
             <div className="center mx-auto">
                 <div className=' miniHeader d-flex justify-content-between align-items-center'>
                     <h2 className="display-3">Hello User!</h2>
-
                     <Datetime />
-                </div>                
+                </div>
             <SearchTable/>
             </div>
             

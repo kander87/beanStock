@@ -1,5 +1,6 @@
 const { model } = require('mongoose');
 const { User } = require('../modules/user.module')
+const { Favorite } = require('../modules/favorite.module')
 
 const users = [];
 const generateID = () => Math.random().toString(36).substring(2, 10);
@@ -39,9 +40,11 @@ module.exports.create = (req,res)=> {
     //     });
 
     // Runs if a user exists
-    res.json({
-        error_message: "User already exists",
-});
+
+    // ! This does not check if user exists! 
+//     res.json({
+//         error_message: "User already exists",
+// });
 }
 
 module.exports.findAll = (req, res) => {
@@ -106,4 +109,33 @@ module.exports.deleteOne = (req, res)=> {
     .catch((err) => {
         res.json({ message: 'Something went  wrong', error: err })
     });
+}
+
+// ========================FAVORITE CONTROLLER ===========================
+module.exports.getAllFavorites = (req, res) => {
+    // Favorite.find()
+    // .then((favoritesList) => {
+    //     res.json(favoritesList)
+    // })
+    // .catch((err) => {
+    //     res.json({ message: 'Something went all wrong', error: err })
+    // });
+    User.find({ _id: req.params.id}).populate("favorites")
+    .then((favoriteList) => {
+        res.json(favoriteList)
+    })
+    .catch((err) => {
+        res.json({ message: 'Something went all wrong', error: err })
+    })
+}
+
+module.exports.addFavorite = async (req, res) => {
+    const {id} = req.params 
+    req.body.owner = id
+    Favorite.create(req.body)
+    .then(fav => {
+        res.json({fav,
+        message: "Added to Favorites!",
+    })})
+    .catch(err => res.status(400).json(err))
 }

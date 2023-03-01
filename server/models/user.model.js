@@ -25,6 +25,10 @@ const UserSchema = new mongoose.Schema({
         required: [true, "Password is required"],
         minlength: [8, "Pasword must be at least 8 characters long"]
     },
+    favorites: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Favorite"
+    }]
 }, { timestamps: true });
 
 //*************************************************** conf password*******************/

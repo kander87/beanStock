@@ -1,9 +1,8 @@
 const { User } = require('../models/user.model')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const { Favorite } = require('../modules/favorite.module')
+const { Favorite } = require('../models/favorite.model')
 const { model } = require('mongoose');
-const { User } = require('../modules/user.module')
 
 const generateID = () => Math.random().toString(36).substring(2, 10);
 

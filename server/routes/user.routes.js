@@ -11,6 +11,7 @@ module.exports = (app) => {
     app.get('/api/getUser', UserController.getUser)
     app.get('/api/favorites/:id', UserController.getAllFavorites)//get all favorites
     app.post('/api/favorites/:id', UserController.addFavorite)//add favorite
+}
     // app.get('/api', UserController.index)//test route
     // app.get('/api/login/:username', UserController.findOne)//find one
     // app.get('/api/users', UserController.findAll)//find all

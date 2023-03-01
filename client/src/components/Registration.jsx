@@ -96,5 +96,6 @@ const Registration = () => {
         </div>
     )
 }
+//testing
 
 export default Registration

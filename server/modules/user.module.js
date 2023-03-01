@@ -21,6 +21,10 @@ const UserSchema = new mongoose.Schema({
         required: [true, "Password is required"],
         minlength: [3, "Pasword must be at least 3 characters long"]
     },
+    favorites: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Favorite"
+    }]
     },{timestamps: true});
 
 module.exports.User = mongoose.model("User", UserSchema);

@@ -1,6 +1,10 @@
 const { User } = require('../models/user.model')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+const { Favorite } = require('../modules/favorite.module')
+const { model } = require('mongoose');
+const { User } = require('../modules/user.module')
+
 const generateID = () => Math.random().toString(36).substring(2, 10);
 
 module.exports.register=(req,res) => {
@@ -58,6 +62,22 @@ module.exports.getUser = (req,res) => {
     User.findOne({_id: decodedJwt.payload.id})
         .then(oneUser => res.json(oneUser))
         .catch(err => res.status(500).json(err))
+    // if (result.length === 0) {
+    //     //👇🏻 creates the structure for the user👇🏻   👇🏻   👇🏻    👇🏻   👇🏻👇🏻👇🏻👇🏻👇🏻
+    //     const newUser = { id: generateID(), email, password, username, tel };
+    //     //👇🏻 Adds the user to the array of users
+    //     users.push(newUser);
+    //     //👇🏻 Returns a message👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻
+    //     return res.json({
+    //         message: "Account created successfully!",
+    //     });
+
+    // Runs if a user exists
+
+    // ! This does not check if user exists! 
+//     res.json({
+//         error_message: "User already exists",
+// });
 }
 
 // module.exports.create = (req,res)=> {
@@ -173,4 +193,33 @@ module.exports.deleteOne = (req, res)=> {
     .catch((err) => {
         res.json({ message: 'Something went  wrong', error: err })
     });
+}
+
+// ========================FAVORITE CONTROLLER ===========================
+module.exports.getAllFavorites = (req, res) => {
+    // Favorite.find()
+    // .then((favoritesList) => {
+    //     res.json(favoritesList)
+    // })
+    // .catch((err) => {
+    //     res.json({ message: 'Something went all wrong', error: err })
+    // });
+    User.find({ _id: req.params.id}).populate("favorites")
+    .then((favoriteList) => {
+        res.json(favoriteList)
+    })
+    .catch((err) => {
+        res.json({ message: 'Something went all wrong', error: err })
+    })
+}
+
+module.exports.addFavorite = async (req, res) => {
+    const {id} = req.params 
+    req.body.owner = id
+    Favorite.create(req.body)
+    .then(fav => {
+        res.json({fav,
+        message: "Added to Favorites!",
+    })})
+    .catch(err => res.status(400).json(err))
 }

@@ -14,6 +14,7 @@ module.exports.register=(req,res) => {
         res
             .cookie("usertoken", userToken, {httpOnly:true})
             .json({ msg: "success!", user: user, firstName: user.firstName });
+
     })
     .catch(err => {
         console.log("in err" + err)
@@ -40,6 +41,7 @@ module.exports.login = async (req,res) => {
 
     const correctPassword = await bcrypt.compare(req.body.password,user.password)
 
+
     if(!correctPassword){
         return res.sendStatus(400)
     }
@@ -48,7 +50,7 @@ module.exports.login = async (req,res) => {
 
     res
         .cookie("usertoken", userToken, {httpOnly:true})
-        .json({msg: "success!", id: user._id, firstName: user.firstName})
+        .json({msg: "success!"})
 }
 
 
@@ -62,7 +64,66 @@ module.exports.getUser = (req,res) => {
     User.findOne({_id: decodedJwt.payload.id})
         .then(oneUser => res.json(oneUser))
         .catch(err => res.status(500).json(err))
-}
+    // if (result.length === 0) {
+    //     //👇🏻 creates the structure for the user👇🏻   👇🏻   👇🏻    👇🏻   👇🏻👇🏻👇🏻👇🏻👇🏻
+    //     const newUser = { id: generateID(), email, password, username, tel };
+    //     //👇🏻 Adds the user to the array of users
+    //     users.push(newUser);
+    //     //👇🏻 Returns a message👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻👇🏻
+    //     return res.json({
+    //         message: "Account created successfully!",
+    //     });
+
+
+// module.exports.create = (req,res)=> {
+// //     User.create(req.body)
+// //     .then(newUser => {
+// //         return res.json(newUser)
+// //     }).catch(err => {
+// //         return res.status(400).json(err)
+// //     })
+// // }
+//     // Get the user's credentials
+    
+
+//     const {userName, password, confPassword, firstName, lastName  } = req.body;
+    
+//     fetch(`http://localhost:8000/login/${userName}`)
+//     // User.findOne({ userName: req.userName })
+//         .then(User => {
+//             return res.json(User)
+//         })
+//         .catch(err => {
+//             return res.json(err)
+//         })
+
+
+//     // Checks if there is an existing user with the same username
+//     // let result = users.filter((user) => user.userName === userName);
+//     // console.log(result)
+//     if (User ==0){
+//         // console.log("passwords match")
+//         // if (result.length === 0) {
+//             // console.log(req.body)
+//         User.create(req.body)
+//         .then(user => {
+//             res.json({user,
+//             message: "Account created successfully!",
+//         })})
+//         .catch(err => res.status(400).json(err))
+//         } else{
+//             res.json({
+//             error_message: "User already exists",
+//             });
+//         }
+//     // } else {
+//     //     console.log("bruh pws need to match")
+//     //     res.json({
+//     //         error_message: "Passwords do not match!",
+//     //     });
+//     // }
+// }
+
 
 module.exports.findAll = (req, res) => {
 

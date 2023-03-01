@@ -5,6 +5,7 @@ import axios from 'axios'
 
 const Login = () => {
     const {id} = useParams()
+
     const [userName, setUserName] = useState("")
     const [password, setPassword] = useState("")
 
@@ -30,13 +31,13 @@ const Login = () => {
         //         navigate("/");
         //     }
         // })
+
             .catch((err) => console.error(err));
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         postLoginDetails();
-        // console.log({ userName, password });
         setPassword("");
         setUserName("");
     };

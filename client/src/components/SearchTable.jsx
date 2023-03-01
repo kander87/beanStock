@@ -69,8 +69,8 @@ const SearchTable = () => {
                                     <td className="align-middle td" style={{color: 'white'}}>
                                         ${stock.current_price}
                                     </td>
-                                    {(stock.price_change_24h < 0) ?<td className="align-middle td" style={{color: 'red'}}> {stock.price_change_24h.toFixed(4)}</td>: 
-                                        <td className="align-middle td " style={{color: 'green'}}> {stock.price_change_24h.toFixed(4)}</td>}
+                                    {(stock.price_change_24h < 0) ?<td className="align-middle td" style={{color: 'red'}}>↓ ${stock.price_change_24h.toFixed(4)}</td>: 
+                                        <td className="align-middle td " style={{color: 'green'}}> ↑ ${stock.price_change_24h.toFixed(4)}</td>}
                                     
                                 </tr>
                             )

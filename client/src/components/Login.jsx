@@ -1,9 +1,10 @@
 import React, {useState} from "react";
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate,useParams } from 'react-router-dom'
 import axios from 'axios'
 
 
 const Login = () => {
+    const {id} = useParams()
 
     const [userName, setUserName] = useState("")
     const [password, setPassword] = useState("")
@@ -18,24 +19,25 @@ const Login = () => {
 
         )
         .then(res =>{
-            navigate('/search')
+            console.log(res)
+            navigate(`/search/${res.data.id}/${res.data.firstName}`)
         })
-        .then((res) => res.json())
-        .then((data) => {
-            if (data.error_message) {
-                alert(data.error_message);
-            } else {
-                alert(data.message);
-                navigate("/");
-            }
-        })
+        // .then((res) => res.json())
+        // .then((data) => {
+        //     if (data.error_message) {
+        //         alert(data.error_message);
+        //     } else {
+        //         alert(data.message);
+        //         navigate("/");
+        //     }
+        // })
+
             .catch((err) => console.error(err));
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         postLoginDetails();
-        console.log({ userName, password });
         setPassword("");
         setUserName("");
     };

@@ -9,10 +9,12 @@ const generateID = () => Math.random().toString(36).substring(2, 10);
 module.exports.register=(req,res) => {
     User.create(req.body)
     .then(user => {
+        console.log(process.env.FIRST_SECRET_KEY)
         const userToken =jwt.sign({id:user._id}, process.env.FIRST_SECRET_KEY); 
         res
             .cookie("usertoken", userToken, {httpOnly:true})
-            .json({ msg: "success!", user: user });
+            .json({ msg: "success!", user: user, firstName: user.firstName });
+
     })
     .catch(err => {
         console.log("in err" + err)
@@ -38,6 +40,7 @@ module.exports.login = async (req,res) => {
     }
 
     const correctPassword = await bcrypt.compare(req.body.password,user.password)
+
 
     if(!correctPassword){
         return res.sendStatus(400)
@@ -71,13 +74,6 @@ module.exports.getUser = (req,res) => {
     //         message: "Account created successfully!",
     //     });
 
-    // Runs if a user exists
-
-    // ! This does not check if user exists! 
-//     res.json({
-//         error_message: "User already exists",
-// });
-}
 
 // module.exports.create = (req,res)=> {
 // //     User.create(req.body)

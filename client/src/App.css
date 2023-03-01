@@ -1,5 +1,18 @@
 .nav {
-  background-color: #274F1d;
+  background-color:rgba(233, 250, 225);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  padding: 0px;
+  margin:0px;
+  /* background-color: #e9fae1; */
+}
+
+.logo{
+  height: 120px;
+  width: auto;
 }
 
 .loginPage {
@@ -91,61 +104,94 @@ text-align: center;
   background-color: black;
   width:100%; 
   height: 200vh;
-  color: #fef2c4;
+  color: black;
+}
+
+.date{
+  /* font-size-adjust: inherit; */
+  font-size: larger;
 }
 
 .center {
-  width: 75%; 
+  width: 78%; 
 }
 
 .miniHeader{
-  padding-top: 20px;
+  padding-top: 130px;
 }
 
-.thead-dark{
-  color: #f3d1a3;
+.table{
+  background-color: #3D3738;
+  /* border-radius: 1rem; */
+  opacity: 80%;
+  color: white;
+  /* background-color:rgba(255, 234, 187, 0.75);
+  border: 1px solid; */
+  /* color: black */
+
 }
+/* .thead{
+  color: #f3d1a3
+} */
+.table-bordered{
+  border-color: #000000;
+}
+
 
 .sideNav{
   font-size:larger;
-  color: white;
+  color: black;
+  justify-content: center;
+  background-color:rgba(247, 231, 199, 0.75);
+  padding-top: 20px;
+/* 
   background: › linear-gradient(to top,
   rgb(179, 179, 179), rgba(0, 0, 0)) ;
-  background-image: linear-gradient(to top, rgb(167, 167, 167), rgba(0, 0, 0));
+  background-image: linear-gradient(to top, rgb(167, 167, 167), rgba(0, 0, 0)); */
 }
 
 .coin-input {
   padding-left: 16px;
   margin: 20px;
-  width: 300px;
+  width: 250px;
   height: 50px;
-  border-radius: 4px;
+  border-radius: 5px;
   border: none;
-  background-image: linear-gradient(90deg,#565452 0,#bdc4b5 31%,#918f8a);
+  background-image: linear-gradient(90deg,#ffcd9b 0,#fffabb 31%,#ffffff);
   color: #e2e2e2;
 }
 
 .backgroundStyle {
-  background: › linear-gradient(to top,
-  rgb(0, 0, 0), rgba(0, 0, 0, 0.86)) ;
-  background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0.86)), url(./components/bg.jpg);
-  background-position: center;
+  background-position-y: 100px;
+  background-image: url(./components/elephant2.jpg);
+  background-position-x:center ;
+  background-position-y: 80px;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 500vh;
-  padding-bottom: 16px;
+  background-attachment: fixed;
+
+  /* height: 100vh; */
 } 
 
 .link-styles{
-  color:white;
+  color:black;
   font-size: larger;
-  padding: 10px;
+  padding: 30px;
+  /* padding-top: 50px; */
+  justify-self: center;
+  margin: auto;
+  text-decoration: none;
+}
+
+.serachLink{
+  margin-top: 100px;
 }
 
 .td{
   padding-left:10px;
   padding-right:10px;
 }
+
 
 .bm-burger-button {
   position: fixed;
@@ -154,7 +200,7 @@ text-align: center;
   margin: 10px;
 }
 .bm-burger-bars {
-  background: white;
+  background: #3D3738;
 }
 .bm-burger-bars-hover {
   background: #274F1d;
@@ -162,9 +208,21 @@ text-align: center;
 
 ::placeholder{
   color: black;
+  font-size: larger;
 }
 
 .description{
   width: 100%;
   padding: 50px;
 } 
+
+.signOutBtn{
+  margin-top: 30px;
+  margin: auto;
+  justify-self: center;
+  border-radius: 5px;
+  /* padding:5px */
+}
+.favlink{
+  margin-bottom: 30px;
+}

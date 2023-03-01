@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 
-const Registration = () => {
+const Registration = (props) => {
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -13,6 +13,7 @@ const Registration = () => {
     const [errors,setErrors]= useState([])
     const navigate= useNavigate()
 
+    const [register, setRegister] = useState([])
 
     const postRegistrationDetails = () => {
         // if (password == confirmPassword){
@@ -21,7 +22,8 @@ const Registration = () => {
             })
 
                 .then(res =>{
-                    navigate('/search')
+                    console.log(res)
+                    navigate(`/search/${res.data.id}/${res.data.firstName}`)
                 })
                 .then((res) => res.json())
                 .then((data) => {

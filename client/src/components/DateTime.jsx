@@ -21,8 +21,8 @@ const DateTime = () => {
 
     return (
         <div>
-            <div style={{color: 'green', fontSize: '25px'}}><b>{date}</b></div>
-            <div style={{color: 'yellow', fontSize: '20px'}}>{time}</div>
+            <div className="date" ><b>{date}</b></div>
+            <div className="time">{time}</div>
         </div>
     )
 }

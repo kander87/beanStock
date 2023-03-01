@@ -10,4 +10,4 @@ require("./config/mongoose.config");
 require("./routes/user.routes")(app); // may need to adjust routes here
 
 // must be at the bottom
-app.listen(port, () => console.log(`Listening on port: ${port}`))
+app.listen(port, () => console.log(`Listening on port: ${port}`))  

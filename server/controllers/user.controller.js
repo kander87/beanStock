@@ -10,7 +10,6 @@ module.exports.index = (req, res) => {
         message: "Hello from users"
     })
 }
-
 module.exports.create = (req,res)=> {
     // Get the user's credentials👇🏻
     const {username } = req.body;

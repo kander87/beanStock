@@ -9,6 +9,7 @@ const Login = () => {
 
     const navigate = useNavigate()
 
+    
     const postLoginDetails = () => {
         fetch("http://localhost:8000/api/login", {
             method: "POST",

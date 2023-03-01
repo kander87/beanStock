@@ -1,47 +1,44 @@
 import React, {useState} from "react";
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate,useParams } from 'react-router-dom'
+import axios from 'axios'
 
 
 const Login = () => {
-
-    const [username, setUsername] = useState("")
+    const {id} = useParams()
+    const [userName, setUserName] = useState("")
     const [password, setPassword] = useState("")
 
     const navigate = useNavigate()
 
     const postLoginDetails = () => {
-        fetch("http://localhost:8000/api/login", {
-            method: "POST",
-            body: JSON.stringify({
-                username,
-                password,
-            }),
-            headers: {
-                "Content-Type": "application/json",
-            },
+
+        axios.post('http://localhost:8000/api/login',{
+            userName, password
+        }
+
+        )
+        .then(res =>{
+            console.log(res)
+            navigate(`/search/${res.data.id}/${res.data.firstName}`)
         })
-            .then((res) => res.json())
-            .then((data) => {
-                if (data.error_message) {
-                    alert(data.error_message);
-                } else {
-                    // Logs the username to the console
-                    console.log(data.data);
-                    // save the username to the local storage
-                    localStorage.setItem("username", data.data.username);
-                    // Navigates to the 2FA route
-                    navigate("/search");
-                }
-            })
+        // .then((res) => res.json())
+        // .then((data) => {
+        //     if (data.error_message) {
+        //         alert(data.error_message);
+        //     } else {
+        //         alert(data.message);
+        //         navigate("/");
+        //     }
+        // })
             .catch((err) => console.error(err));
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         postLoginDetails();
-        console.log({ username, password });
+        // console.log({ userName, password });
         setPassword("");
-        setUsername("");
+        setUserName("");
     };
 
 
@@ -55,9 +52,9 @@ const Login = () => {
                     placeholder="Username"
                     className="form-control  my-2"
                     type="text"
-                    value ={username}
+                    value ={userName}
                     required
-                    onChange={(e) => setUsername(e.target.value)}
+                    onChange={(e) => setUserName(e.target.value)}
                 />
                 <input
                     placeholder="Password"

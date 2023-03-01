@@ -8,6 +8,8 @@ import Share from '../components/Share'
 
 const Favorites = (props) => {
     const navigate = useNavigate();
+    const {id, firstName} = useParams()
+    // const {id, firstName} = props
     const [coinList, setCoinList] = useState([])
     const [eachCoin, eachSetCoin] = useState([])
     // useEffect(() => {
@@ -43,13 +45,13 @@ const Favorites = (props) => {
 
     return (
         <div className="searchPage backgroundStyle">
-            <SideNav />
+            <SideNav id={id} firstName= {firstName}/>
             <div className="center mx-auto">
                 <div className=' miniHeader d-flex justify-content-between align-items-center'>
                     <h2 className="display-3">Favorites</h2>
                     <Datetime />
                 </div>
-                <FavoriteTable />
+                <FavoriteTable id={id} firstName= {firstName}/>
                 {/* <button onClick={(e) => removeFavorite(eachCoin._id)} className='btn btn-danger'>Delete</button> */}
 
             </div>

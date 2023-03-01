@@ -7,14 +7,16 @@ import Registration from '../components/Registration'
 
 
 const LoginReg = () => {
+    const [firstName] = useState([])
+    
     return (
         // <div className='loginPage d-flex justify-content-between'>
         <div className='loginPage'>
             <div className='logReg'>
-            <Registration/>
+            <Registration firstName = {firstName}/>
             </div>
             <div className='logReg'>
-            <Login/>
+            <Login firstName = {firstName}/>
             </div>
         </div>
     )

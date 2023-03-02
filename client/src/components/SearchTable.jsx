@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 
-const SearchTable = () => {
+const SearchTable = (props) => {
     const [stocks, setStocks] = useState([])
 
     useEffect(() => {
@@ -36,8 +36,8 @@ const SearchTable = () => {
                             return (
                                 <tr key={index}>
                                     <td className="align-middle td">
-                                        <Link to={"/stock/view/" + stock.id}>
-                                            <img src={stock.image} style={{width: '25px'}}/> {stock.name}
+                                        <Link to={`/stock/view/${stock.id}`}>
+                                            <img src={stock.image} style={{width: '25px'}} alt="cyrpto image"/> {stock.name}
                                         </Link>
                                     </td>
                                     <td className="align-middle td" style={{color: 'white'}}>

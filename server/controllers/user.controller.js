@@ -13,7 +13,7 @@ module.exports.register=(req,res) => {
         const userToken =jwt.sign({id:user._id}, process.env.FIRST_SECRET_KEY); 
         res
             .cookie("usertoken", userToken, {httpOnly:true})
-            .json({ msg: "success!", user: user, firstName: user.firstName });
+            .json({ msg: "success!", user: user, id:user._id, firstName: user.firstName });
 
     })
     .catch(err => {
@@ -50,7 +50,7 @@ module.exports.login = async (req,res) => {
 
     res
         .cookie("usertoken", userToken, {httpOnly:true})
-        .json({msg: "success!"})
+        .json({msg: "success!", id:user._id, firstName:user.firstName})
 }
 
 
@@ -123,7 +123,7 @@ module.exports.getUser = (req,res) => {
 //     //     });
 //     // }
 // }
-
+}
 
 module.exports.findAll = (req, res) => {
 

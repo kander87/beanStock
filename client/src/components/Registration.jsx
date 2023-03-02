@@ -21,7 +21,7 @@ const Registration = () => {
             })
 
                 .then(res =>{
-                    navigate('/search')
+                    navigate('/top25')
                 })
                 .then((res) => res.json())
                 .then((data) => {
@@ -57,7 +57,7 @@ const Registration = () => {
 
     return (
         <div className=' registration_containter'>
-        <form className="register p-4 mt-5" onSubmit={handleSubmit}>
+        <form className="register p-4" onSubmit={handleSubmit}>
             <h2 className='text-white mb-3'>Register</h2>
             <input 
                 placeholder='First Name' 

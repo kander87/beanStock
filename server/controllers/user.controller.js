@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const { Favorite } = require('../modules/favorite.module')
 const { model } = require('mongoose');
-const { User } = require('../modules/user.module')
+// const { User } = require('../modules/user.module')
 
 const generateID = () => Math.random().toString(36).substring(2, 10);
 

@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
-
-const SearchTable = () => {
+const SearchTable = (props) => {
     const [stocks, setStocks] = useState([])
     const [query, setQuery] = useState("")
 

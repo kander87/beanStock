@@ -1,11 +1,9 @@
 import React, {useState} from "react";
-import { Link, useNavigate,useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 
 const Login = () => {
-    const {id} = useParams()
-
     const [userName, setUserName] = useState("")
     const [password, setPassword] = useState("")
 
@@ -19,18 +17,10 @@ const Login = () => {
 
         )
         .then(res =>{
-            console.log(res)
-            navigate(`/search/${res.data.id}/${res.data.firstName}`)
+            localStorage.setItem('userId',JSON.stringify(res.data.id));
+            localStorage.setItem('firstName',JSON.stringify(res.data.firstName));
+            navigate(`/search`)
         })
-        // .then((res) => res.json())
-        // .then((data) => {
-        //     if (data.error_message) {
-        //         alert(data.error_message);
-        //     } else {
-        //         alert(data.message);
-        //         navigate("/");
-        //     }
-        // })
 
             .catch((err) => console.error(err));
     };

@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios';
-import { Link } from 'react-router-dom' 
+import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import Login from '../components/Login'
 import Registration from '../components/Registration'

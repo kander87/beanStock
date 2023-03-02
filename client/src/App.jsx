@@ -16,12 +16,11 @@ function App(props) {
       <Navbar/>
       <Routes>
         <Route path='/' element={<LoginReg/>}/>
-        <Route path='/search/:id/:firstName' element={<Search/>}/>
-        <Route path='/favorites/:id/:firstName' element={<Favorites/>}/>
-        <Route path='/top25' element={<Top25/>}/>
         <Route path='/search' element={<Search/>}/>
         <Route path='/favorites' element={<Favorites/>}/>
         <Route path='/stock/view/:id' element={<Details/>}/>
+        <Route path='/top25' element={<Top25/>}/>
+
  {/* prob need to make the details link /:id */}
 
       </Routes>

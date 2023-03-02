@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 
 
@@ -22,8 +22,9 @@ const Registration = (props) => {
             })
 
                 .then(res =>{
-                    console.log(res)
-                    navigate(`/search/${res.data.id}/${res.data.firstName}`)
+                    localStorage.setItem('userId',JSON.stringify(res.data.id));
+                    localStorage.setItem('firstName',JSON.stringify(res.data.firstName));
+                    navigate(`/search`)
                 })
                 .then((res) => res.json())
                 .then((data) => {

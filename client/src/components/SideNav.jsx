@@ -13,9 +13,11 @@ const SideNav = () => {
 
     return (
       <Menu  width={'150px'} className="sideNav">
-        <Link to="/search" className={"link-styles"}> Search</Link>
-        <Link to="/favorites" className={"link-styles"}> Favorites</Link>
-        <button className='signOutBtn m-4 p-1' onClick={handleLogout}>Logout</button>
+        <Link to="/top25" className={"link-styles searchLink"}> Top 25</Link>
+        <Link to="/search" className={"link-styles searchLink"}> Search</Link>
+
+        <Link to="/favorites" className={"link-styles favlink"}> Favorites</Link>
+        <button className='signOutBtn' onClick={handleLogout}>Logout</button>
       </Menu>
     );
   

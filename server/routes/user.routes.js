@@ -10,10 +10,12 @@ module.exports = (app) => {
     app.get('/api/logout', UserController.logout)
     app.get('/api/getUser', UserController.getUser)
     app.get('/api/favorites/:id', UserController.getAllFavorites)//get all favorites
-    app.post('/api/favorites/:id', UserController.addFavorite)//add favorite
+    app.post('/api/favorites/:id', UserController.addFavorite)}//add favorite
     // app.get('/api', UserController.index)//test route
     // app.get('/api/login/:username', UserController.findOne)//find one
     // app.get('/api/users', UserController.findAll)//find all
     // app.post('/api/register', UserController.create)//create route
     // app.put('/api/user/edit/:id', UserController.updateOne)//update one route
     // app.delete('/api/user/:id', UserController.deleteOne)//delete one route
+
+    

@@ -11,7 +11,7 @@ const LoginReg = () => {
     
     return (
         // <div className='loginPage d-flex justify-content-between'>
-        <div className='loginPage'>
+        <div className='backgroundStyle'>
             <div className='logReg'>
             <Registration firstName = {firstName}/>
             </div>

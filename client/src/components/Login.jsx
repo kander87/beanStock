@@ -45,7 +45,7 @@ const Login = () => {
 
     return (
         <div className="login_container">
-            <form className="login p-4 mt-5 d-block mx-auto" onSubmit={handleSubmit}>
+            <form className="login p-4 d-block" onSubmit={handleSubmit}>
 
             {/* <form className="login mt-5 w-50 mx-auto p-4 " onSubmit={handleSubmit}> */}
                 <h2 className="text-white mb-3">Login</h2>

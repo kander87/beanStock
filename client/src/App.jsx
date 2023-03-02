@@ -4,10 +4,11 @@ import Navbar from './components/Navbar';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Routes, Route } from 'react-router-dom';
 import LoginReg from './views/LoginReg';
-import Search from './views/Search'
+import Top25 from './views/Top25'
 import Favorites from './views/Favorites'
 import Details from './views/Details'
-import { useState } from 'react';
+import Search from './views/Search'
+
 
 function App(props) {
   return (
@@ -17,6 +18,9 @@ function App(props) {
         <Route path='/' element={<LoginReg/>}/>
         <Route path='/search/:id/:firstName' element={<Search/>}/>
         <Route path='/favorites/:id/:firstName' element={<Favorites/>}/>
+        <Route path='/top25' element={<Top25/>}/>
+        <Route path='/search' element={<Search/>}/>
+        <Route path='/favorites' element={<Favorites/>}/>
         <Route path='/stock/view/:id' element={<Details/>}/>
  {/* prob need to make the details link /:id */}
 

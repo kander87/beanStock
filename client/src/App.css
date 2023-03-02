@@ -17,21 +17,35 @@
 
 .loginPage {
   background-image: url(./components/elephant2.jpg);
-  background-position: center;
+  background-position-x: center;
+  background-position-y:top ;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
 }
 
-.register,.login {
+.register {
   background-color: #3D3738;
   border-radius: 1rem;
   opacity: 80%;
+  margin-top: 5vh;
+  /* padding-top: 5vh; */
+}
+.login {
+  background-color: #3D3738;
+  border-radius: 1rem;
+  opacity: 80%;
+  margin-top: 10vh;
 }
 
 .logReg {
   width: 75vw;
-  margin: 0 auto;
+  /* margin: 0px auto; */
+  margin-top: 0px
+  /* margin-top: 100px */
+}
+.is-hidden {
+  display: none;
 }
 
 ::placeholder {
@@ -40,6 +54,7 @@ text-align: center;
 
 
 .App {
+  background-position: top;
   text-align: center;
 }
 
@@ -76,30 +91,6 @@ text-align: center;
 }
 
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .searchPage{
   background-color: black;
   width:100%; 
@@ -110,6 +101,14 @@ text-align: center;
 .date{
   /* font-size-adjust: inherit; */
   font-size: larger;
+  background-color: rgb(170,182,165, 0.65);
+  padding-right: 5px;
+  padding-left: 5px;
+
+}
+.time{
+  background-color: rgb(170,182,165, 0.65);
+
 }
 
 .center {
@@ -121,9 +120,9 @@ text-align: center;
 }
 
 .table{
-  background-color: #3D3738;
+  background-color: #000000;
   /* border-radius: 1rem; */
-  opacity: 80%;
+  opacity: 85%;
   color: white;
   /* background-color:rgba(255, 234, 187, 0.75);
   border: 1px solid; */
@@ -136,6 +135,27 @@ text-align: center;
 .table-bordered{
   border-color: #000000;
 }
+
+
+.coinLink{
+  text-decoration: none;
+  color: white;
+}
+
+.pricedown{
+  color: rgb(255, 0, 0);
+
+}
+
+.priceup{
+  color: rgb(51, 255, 0);
+}
+/* .thead{
+  color: #f3d1a3
+} */
+/* .table-bordered{
+  border-color: #000000;
+} */
 
 
 .sideNav{
@@ -225,4 +245,36 @@ text-align: center;
 }
 .favlink{
   margin-bottom: 30px;
+}
+
+.results {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(4, 1fr);
+  width: 75;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  background-color:rgba(255, 234, 187, 0.55);
+}
+
+.coinLink2{
+  color:black;
+  text-decoration: none;
+}
+
+.search {
+  background-color:rgba(255, 234, 187, 0.55);
+  text-align: center;
+  padding: 15px;
+  border-radius: 5px;
+  width: 75%;
+  justify-self: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input {
+  font-size: 25px;
+  border-radius: 5px solid white;
 }

@@ -18,3 +18,5 @@ module.exports = (app) => {
     // app.post('/api/register', UserController.create)//create route
     // app.put('/api/user/edit/:id', UserController.updateOne)//update one route
     // app.delete('/api/user/:id', UserController.deleteOne)//delete one route
+
+    

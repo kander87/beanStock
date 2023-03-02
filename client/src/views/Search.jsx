@@ -6,8 +6,8 @@ import SideNav from '../components/SideNav';
 import Datetime from '../components/DateTime'
 
 
-const Search = () => {
-
+const Search = (props) => {
+    const {id, firstName} = useParams()
 
     return (
         <div className="searchPage backgroundStyle">

@@ -22,11 +22,7 @@ const DateTime = () => {
     return (
         <div>
             <div className="date" ><b>{date}</b></div>
-<<<<<<< HEAD
             <div className="time">{time}</div>
-=======
-            <div className="time" >{time}</div>
->>>>>>> BawsKateBranch
         </div>
     )
 }

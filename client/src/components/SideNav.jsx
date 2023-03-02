@@ -24,16 +24,13 @@ const SideNav = (props) => {
 
     return (
       <Menu  width={'150px'} className="sideNav">
-<<<<<<< HEAD
         {console.log(firstName,id)}
         <Link to={'/search/'+ id + "/" + firstName} className={"link-styles searchLink"}> Search</Link>
         <Link to={'/favorites/'+ id + "/" + firstName} className={"link-styles favlink"}> Favorites</Link>
-=======
         <Link to="/top25" className={"link-styles searchLink"}> Top 25</Link>
         <Link to="/search" className={"link-styles searchLink"}> Search</Link>
 
         <Link to="/favorites" className={"link-styles favlink"}> Favorites</Link>
->>>>>>> BawsKateBranch
         <button className='signOutBtn' onClick={handleLogout}>Logout</button>
       </Menu>
     );

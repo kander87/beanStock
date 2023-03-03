@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a7511ead.css",
+    "main.js": "/static/js/main.a8f438af.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/elephant2.jpg": "/static/media/elephant2.ab0cb0760e7eeacd9f0f.jpg",
+    "static/media/bslogo.png": "/static/media/bslogo.4da141f5714a6f74a47b.png",
+    "index.html": "/index.html",
+    "main.a7511ead.css.map": "/static/css/main.a7511ead.css.map",
+    "main.a8f438af.js.map": "/static/js/main.a8f438af.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a7511ead.css",
+    "static/js/main.a8f438af.js"
+  ]
+}

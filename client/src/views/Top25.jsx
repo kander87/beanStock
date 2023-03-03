@@ -7,7 +7,12 @@ import Datetime from '../components/DateTime'
 
 
 const Top25 = () => {
+    const [firstName, setFirstName] = useState("")
 
+    useEffect(() => {
+        const firstName = localStorage.getItem('firstName');
+        setFirstName(JSON.parse(firstName));
+    }, [])
 
 
     return (
@@ -15,7 +20,7 @@ const Top25 = () => {
             <SideNav/>
             <div className="center mx-auto">
                 <div className=' miniHeader d-flex justify-content-between align-items-center'>
-                    <h2 className="display-3">Hello User!</h2>
+                    <h2 className="display-3">Hello {firstName}!</h2>
                     <Datetime />
                 </div>
             <Top25Table/>

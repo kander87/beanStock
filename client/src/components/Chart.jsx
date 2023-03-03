@@ -46,7 +46,7 @@ const data = {
 }
     return (
         <div>
-            <h1 className='text-white'>{props.name}'s Past Week Market Price</h1>
+            <h4 style={{backgroundColor: 'lightgray', width:'50vh', margin: '0 auto'}}>{props.name}'s Past Week Market Price</h4>
             <div className='w-50 bg-white mx-auto'>
                 <Line data={data}></Line>
             </div>

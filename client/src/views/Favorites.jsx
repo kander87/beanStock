@@ -14,7 +14,7 @@ const Favorites = () => {
                     <h2 className="display-3">Favorites</h2>
                     <Datetime />
                 </div>
-                <FavoriteTable />
+                <FavoriteTable/>
             </div>
             <div>
                 <Share/>

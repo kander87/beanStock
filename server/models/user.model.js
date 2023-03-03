@@ -8,7 +8,7 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: [true, "First name is required"],
         minlength: [2, "First name must be at least 2 characters long"]
-    },
+    }, 
     lastName: {
         type: String,
         required: [true, "Last name is required"],

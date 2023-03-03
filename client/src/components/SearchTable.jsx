@@ -21,29 +21,33 @@ const SearchTable = (props) => {
     }, [query])
 
     return (
+        // <div className='tableWrapper'>
         <div className='searchTable d-flex justify-content-center flex-column p-2' >
-            <div className="search">
+            <div className="">
                 <input type="text"
-                    placeholder={"Search Cryptos"}
+                    placeholder={"Search Here..."}
                     className={"input"}
                     onChange={event => setQuery(event.target.value)}
                     value={query}
                 />
             </div>
-            <div className="results">
-                {stocks?.map(stock => (
-                    <div key={stock.id}>
-                        <img src={stock.large} style={{width: '25px', padding: '2px'}}/>
-                        {/* {stock.large} */}
-                        <Link className={"coinLink2"} to={"/stock/view/" + stock.id}>
-                        {stock.name}</Link>
-                    </div>
-            ))}
+            <i style={{backgroundColor: 'lightgray', width:'60vh', margin: '0 auto', marginTop: '5px'}}>Search through cryptocurrencies, ETFs, and other popular meme coins</i>
+            {/* <br/> */}
+            <div className='tableWrapper'>
+                <div className="results">
+                    {stocks?.map(stock => (
+                        <div key={stock.id}>
+                            <img src={stock.large} style={{ width: '25px', padding: '2px' }} />
+                            {/* {stock.large} */}
+                            <Link className={"coinLink2"} to={"/stock/view/" + stock.id}>
+                                {stock.name}</Link>
+                        </div>
+                    ))}
+                </div>
             </div>
-            </div>
+        </div>
+    )
 
-            )
-        
 }
 
-            export default SearchTable
+export default SearchTable

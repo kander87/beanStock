@@ -33,7 +33,7 @@ const FavoriteTable = () => {
         <div>
 
             <div className="d-flex justify-content-center">
-                <table className="table table-striped m-2 w-75 table-bordered">
+                <table className="table table-striped m-2 w-100 table-bordered">
                     <thead className="thead-dark text-white">
                         <tr>
                             <th scope="col" className="h5">Stock/Crypto</th>
@@ -48,8 +48,9 @@ const FavoriteTable = () => {
                             return (
                                 <tr key={index}>
                                     <td className='text-white'>{fav.name}</td>
-                                    <td className='text-white'>{fav.price}</td>
-                                    <td className='text-white'>{fav.change}</td>
+                                    <td className='text-white'>${fav.price}</td>
+                                    {(fav.change < 0) ?<td className="align-middle td pricedown"><strong style={{color: 'red'}}>↓ ${fav.change.toFixed(4)}</strong></td>: 
+                                        <td className="align-middle td priceup" ><strong style={{color: 'green'}}>↑ ${fav.change.toFixed(4)}</strong> </td>}
                                     <td><button onClick={(e)=> handleDelete(fav._id)} className='btn btn-danger'>Delete</button></td>
                                 </tr>
                             )

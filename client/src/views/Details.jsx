@@ -43,11 +43,11 @@ const Details = () => {
   return (
     (loaded ?
       <div className='backgroundStyle'>
-        <div className='h1' style={{ color: 'white', padding: '15px' }}>{stock.name}</div>
-        <div className='h5' style={{ color: 'white' }}>Current Market Price: ${stock.market_data.current_price.usd} </div>
+        <div className='h1' style={{ color: 'black', padding: '15px' }}>{stock.name}</div>
+        <div className='h5' style={{ color: 'black' }}>Current Market Price: ${stock.market_data.current_price.usd} </div>
         <br />
-        <button onClick={() => addFavorite()} className='btn btn-outline-success'>Add to Favorites!</button>
-        <div className='description' style={{ color: 'white' }}>{desc}... </div>
+        <button onClick={() => addFavorite()} className='btn btn-success'>Add to Favorites!</button>
+        <div className='description' style={{ color: 'black' }}>{desc}... </div>
         <Chart id={id} name={stock.name} />
       </div>
       : "listen listen listen... i gotchu "

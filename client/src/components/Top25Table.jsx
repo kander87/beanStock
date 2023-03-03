@@ -19,7 +19,7 @@ const SearchTable = () => {
     return (
         <div>
             <h1 className="display-6">Top 25 Cryptos</h1>
-            <div className="d-flex justify-content-center">
+            <div className="d-flex justify-content-center tableWrapper">
             <table className="table m-2 w-75">
                 <thead className="thead">
                     <tr style={{color: 'white'}}>

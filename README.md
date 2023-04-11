@@ -1,6 +1,14 @@
 # beanStock
 
 **Web application using Javascript, React, Express, MongoDB, Postman, HTML, CSS, and Bootstrap that allows users to search through different cryptos, learn more about them and their market changes in the past week, and save and share any crypto with others.**
+
+
+## Colaborators:
+- Jesse Thommes = https://github.com/JesseThom
+- Abrar Hussain = https://github.com/sahussain887
+
+
+## How To and Features
 - Created a secure login and registration page including user validations to ensure protection of user information
 
 ![image](https://user-images.githubusercontent.com/120056106/231308291-1aa962ca-8ebd-4ee0-b63c-1021d3ad227d.png)
@@ -43,7 +51,3 @@
 - <img src="https://user-images.githubusercontent.com/120056106/231265596-4a32886f-ec30-406c-b709-17ba8d26dbeb.png" height="50">
 - <img src="https://user-images.githubusercontent.com/120056106/231265636-fc6a8b40-28ad-4676-bc65-72d564dcc9cf.png" height="50">
 - <img src="https://user-images.githubusercontent.com/120056106/231265823-92406174-252e-4430-924c-22f04b260834.png" height="50">
-
-## Colaborators:
-- Jesse Thommes = https://github.com/JesseThom
-- Abrar Hussain = https://github.com/sahussain887
